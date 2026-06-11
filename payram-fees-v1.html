@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///Users/kvn/Downloads/payram-03-fee-landing.html#compare -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayRam | 0.3% Fees for a Limited Time</title>
+<meta name="description" content="Accept crypto payments at 0.3% for a limited period. No chargebacks, no rolling reserves, no debanking risk. Settle in stablecoins on infrastructure you control.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./payram-fees-v1_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --lime: #CAFF54;
+    --cta: #01E46F;
+    --magenta: #FF00FF;
+    --navy: #0D0D1A;
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey: rgba(255,255,255,0.65);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 96px 0; }
+  .section-dark { background: var(--black); }
+  .section-navy { background: var(--navy); }
+  .section-lime { background: var(--lime); color: var(--black); }
+  .section-magenta { background: var(--magenta); color: var(--black); }
+
+  h1, h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-size: clamp(44px, 7vw, 88px); }
+  h2 { font-size: clamp(30px, 4.5vw, 52px); margin-bottom: 20px; }
+  .highlight { color: var(--lime); }
+  .section-lime .highlight { color: var(--black); background: var(--black); color: var(--lime); padding: 0 10px; }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 18px;
+  }
+  .section-lime .eyebrow { color: var(--black); }
+
+  .sub {
+    font-size: 18px;
+    color: var(--grey);
+    max-width: 640px;
+  }
+  .section-lime .sub, .section-magenta .sub { color: rgba(0,0,0,0.75); }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .logo { font-weight: 800; font-size: 20px; letter-spacing: 0.02em; }
+  .logo span { color: var(--lime); }
+
+  .btn {
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 14px 30px;
+    font-size: 16px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+  .btn-primary {
+    background: var(--cta);
+    color: var(--black);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(1,228,111,0.35); }
+  .btn-ghost {
+    border: 2px solid rgba(255,255,255,0.25);
+    color: var(--white);
+  }
+  .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+  .btn-sm { padding: 10px 22px; font-size: 14px; }
+  .btn-dark { background: var(--black); color: var(--lime); }
+  .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
+
+  /* Hero */
+  .hero { padding: 110px 0 90px; text-align: left; position: relative; overflow: hidden; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--lime);
+    color: var(--lime);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .hero-badge .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--lime);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+  .hero .sub { margin: 26px 0 36px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .fee-strike {
+    color: var(--grey);
+    text-decoration: line-through;
+    text-decoration-color: var(--magenta);
+    text-decoration-thickness: 6px;
+  }
+
+  .hero-meta {
+    margin-top: 34px;
+    font-size: 14px;
+    color: var(--grey);
+  }
+
+  /* Comparison */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 48px;
+  }
+  .compare-card {
+    border-radius: 16px;
+    padding: 38px 34px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .compare-card.them { background: rgba(255,255,255,0.04); }
+  .compare-card.us { background: rgba(202,255,84,0.06); border-color: var(--lime); position: relative; }
+  .compare-card.us::after {
+    content: "THIS CAMPAIGN";
+    position: absolute;
+    top: -14px; right: 22px;
+    background: var(--lime);
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 5px 14px;
+    border-radius: 999px;
+  }
+  .compare-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--grey);
+    margin-bottom: 14px;
+  }
+  .compare-card .rate {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 22px;
+  }
+  .compare-card.us .rate { color: var(--lime); }
+  .compare-card ul { list-style: none; }
+  .compare-card li {
+    padding: 9px 0;
+    font-size: 15px;
+    color: var(--grey);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .compare-card li:last-child { border-bottom: none; }
+  .compare-card.us li { color: rgba(255,255,255,0.85); }
+  .compare-card li::before { content: "✕  "; color: #ff5a5a; font-weight: 700; }
+  .compare-card.us li::before { content: "✓  "; color: var(--cta); }
+
+  /* Magenta stat bar */
+  .stat-bar { padding: 64px 0; }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .stat-grid .num { font-size: clamp(34px, 4vw, 56px); font-weight: 900; line-height: 1; }
+  .stat-grid .label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 10px;
+    color: rgba(0,0,0,0.7);
+  }
+
+  /* Benefits */
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 52px;
+  }
+  .benefit {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: border-color 0.2s ease;
+  }
+  .benefit:hover { border-color: var(--lime); }
+  .benefit .icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(202,255,84,0.12);
+    color: var(--lime);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .benefit h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .benefit p { font-size: 15px; color: var(--grey); }
+
+  /* Savings calculator */
+  .calc-wrap {
+    margin-top: 48px;
+    background: rgba(0,0,0,0.08);
+    border: 2px solid var(--black);
+    border-radius: 18px;
+    padding: 42px 38px;
+  }
+  .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .calc-input label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  .calc-input input[type="range"] {
+    width: 100%;
+    accent-color: var(--black);
+  }
+  .calc-input .vol {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 900;
+    margin-top: 14px;
+  }
+  .calc-result .line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .calc-result .line.total {
+    border-bottom: none;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 18px;
+  }
+
+  /* How it works */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 52px;
+  }
+  .step {
+    border-left: 3px solid var(--lime);
+    padding: 6px 0 6px 24px;
+  }
+  .step .step-label {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 10px;
+  }
+  .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .step p { font-size: 15px; color: var(--grey); }
+
+  /* FAQ */
+  .faq { max-width: 760px; margin: 48px auto 0; }
+  details {
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 20px 0;
+  }
+  summary {
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--lime); font-size: 24px; font-weight: 400; }
+  details[open] summary::after { content: "−"; }
+  details p { margin-top: 14px; color: var(--grey); font-size: 15px; }
+
+  /* Final CTA */
+  .final-cta { text-align: center; }
+  .final-cta .sub { margin: 0 auto 36px; }
+
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 36px 0;
+    font-size: 14px;
+    color: var(--grey);
+  }
+  .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+  @media (max-width: 860px) {
+    section { padding: 70px 0; }
+    .compare-grid, .calc-row { grid-template-columns: 1fr; }
+    .benefit-grid, .steps { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Pay<span>Ram</span></div>
+    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#get-started" class="btn btn-primary btn-sm">Claim 0.3% Rate</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero section-dark">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> Limited Period Offer</div>
+    <h1>Pay <span class="fee-strike">1%</span> <span class="highlight">0.3%</span><br>on every payment</h1>
+    <p class="sub">For a limited period, PayRam fees drop to 0.3% per transaction. Accept crypto payments on infrastructure you control, keep more of every sale, and never worry about chargebacks or frozen funds.</p>
+    <div class="hero-ctas">
+      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#get-started" class="btn btn-primary">Start at 0.3%</a>
+      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#compare" class="btn btn-ghost">See the math</a>
+    </div>
+    <p class="hero-meta">No setup fees. No monthly minimums. Rate applies to all transactions during the campaign period.</p>
+  </div>
+</header>
+
+<!-- COMPARISON -->
+<section class="section-navy" id="compare">
+  <div class="container">
+    <span class="eyebrow">The Fee Gap</span>
+    <h2>Card processors take <span class="highlight">10x more</span></h2>
+    <p class="sub">A typical card processor charges 2.9% plus 30 cents, then adds chargeback fees, rolling reserves, and the constant risk of account termination. Here is what you actually pay.</p>
+    <div class="compare-grid">
+      <div class="compare-card them">
+        <h3>Typical Card Processor</h3>
+        <div class="rate">2.9% + $0.30</div>
+        <ul>
+          <li>Chargeback fees of $15 to $100 per dispute</li>
+          <li>Rolling reserves hold 5 to 10% of your revenue</li>
+          <li>Account freezes and debanking for high-risk verticals</li>
+          <li>Settlement takes 2 to 7 business days</li>
+        </ul>
+      </div>
+      <div class="compare-card us">
+        <h3>PayRam, This Campaign</h3>
+        <div class="rate">0.3%</div>
+        <ul>
+          <li>Zero chargebacks, crypto payments are final</li>
+          <li>No rolling reserves, your revenue stays yours</li>
+          <li>Self-hosted, no one can shut you down</li>
+          <li>Funds settle to your wallet instantly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAGENTA STAT BAR -->
+<section class="section-magenta stat-bar">
+  <div class="container">
+    <div class="stat-grid">
+      <div><div class="num">0.3%</div><div class="label">Flat Fee, Limited Period</div></div>
+      <div><div class="num">0</div><div class="label">Chargebacks</div></div>
+      <div><div class="num">0</div><div class="label">Rolling Reserves</div></div>
+      <div><div class="num">100%</div><div class="label">Your Infrastructure</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAVINGS CALCULATOR -->
+<section class="section-lime">
+  <div class="container">
+    <span class="eyebrow">Run Your Numbers</span>
+    <h2>What 0.3% means for your revenue</h2>
+    <p class="sub">Drag the slider to your monthly volume and see the difference against a standard 2.9% processor.</p>
+    <div class="calc-wrap">
+      <div class="calc-row">
+        <div class="calc-input">
+          <label for="volume">Monthly payment volume</label>
+          <input type="range" id="volume" min="10000" max="1000000" step="10000" value="100000" aria-label="Monthly payment volume in dollars">
+          <div class="vol" id="volDisplay">$1,000,000</div>
+        </div>
+        <div class="calc-result">
+          <div class="line"><span>Card processor at 2.9%</span><span id="cardFee">$29,000</span></div>
+          <div class="line"><span>PayRam at 0.3%</span><span id="payramFee">$3,000</span></div>
+          <div class="line total"><span>You keep</span><span id="savings">$26,000 more</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section-dark">
+  <div class="container">
+    <span class="eyebrow">Beyond the Fee Cut</span>
+    <h2>Built for businesses <span class="highlight">banks won't touch</span></h2>
+    <p class="sub">The 0.3% rate is the headline. The infrastructure underneath is why merchants stay.</p>
+    <div class="benefit-grid">
+      <div class="benefit">
+        <div class="icon">⛓</div>
+        <h3>Accept crypto, settle in stablecoins</h3>
+        <p>Take BTC, ETH, USDT, USDC and more. Settle in stablecoins so volatility never touches your books.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🖥</div>
+        <h3>Self-hosted, fully yours</h3>
+        <p>PayRam runs on your own server. No third party holds your funds, your data, or the power to deplatform you.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">⚡</div>
+        <h3>Instant settlement</h3>
+        <p>Payments land in wallets you control the moment they confirm. No 7-day holds, no payout schedules.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🛡</div>
+        <h3>No chargebacks, ever</h3>
+        <p>Crypto payments are final. Friendly fraud and dispute fees disappear from your P&amp;L entirely.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🌍</div>
+        <h3>Borderless by default</h3>
+        <p>Accept payments from any country without cross-border fees, currency conversion spreads, or regional bans.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🔌</div>
+        <h3>Simple integration</h3>
+        <p>Payment links, hosted checkout, and APIs. Go live in hours, not weeks of underwriting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-navy">
+  <div class="container">
+    <span class="eyebrow">Getting Started</span>
+    <h2>Live at <span class="highlight">0.3%</span> in three steps</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-label">Deploy</div>
+        <h3>Spin up PayRam</h3>
+        <p>Deploy on your own server with a one-line install. You hold the keys from day one.</p>
+      </div>
+      <div class="step">
+        <div class="step-label">Connect</div>
+        <h3>Add your checkout</h3>
+        <p>Drop in payment links or integrate the API with your store, platform, or invoicing flow.</p>
+      </div>
+      <div class="step">
+        <div class="step-label">Collect</div>
+        <h3>Get paid at 0.3%</h3>
+        <p>Every transaction during the campaign period is billed at the reduced rate. No fine print.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-dark">
+  <div class="container">
+    <span class="eyebrow">Questions</span>
+    <h2 style="text-align:center;">Before you ask</h2>
+    <div class="faq">
+      <details>
+        <summary>How long does the 0.3% rate last?</summary>
+        <p>The rate applies for a limited campaign period. Lock it in by signing up now, and we will notify you well before standard pricing resumes.</p>
+      </details>
+      <details>
+        <summary>Are there any other fees?</summary>
+        <p>No setup fees, no monthly minimums, no chargeback fees, no reserve requirements. You pay 0.3% per transaction plus standard network gas costs.</p>
+      </details>
+      <details>
+        <summary>Which cryptocurrencies can I accept?</summary>
+        <p>Major assets including BTC, ETH, USDT, and USDC across multiple chains, with stablecoin settlement to protect you from volatility.</p>
+      </details>
+      <details>
+        <summary>Is PayRam suitable for high-risk industries?</summary>
+        <p>Yes. PayRam is self-hosted infrastructure, so there is no acquirer to freeze your account or terminate you for your vertical. iGaming, adult, supplements, and other high-risk merchants run on PayRam today.</p>
+      </details>
+      <details>
+        <summary>Do I need technical knowledge to deploy?</summary>
+        <p>Basic server access is enough. Deployment is a guided one-line install, and our team helps you through setup if you need it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-lime final-cta" id="get-started">
+  <div class="container">
+    <span class="eyebrow">Limited Period</span>
+    <h2>Lock in 0.3% before it's gone</h2>
+    <p class="sub">Ten times cheaper than card rails. Zero chargebacks. Infrastructure you own. The only thing with a deadline is the rate.</p>
+    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#" class="btn btn-dark">Claim Your 0.3% Rate</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>Pay<span style="color:var(--lime)">Ram</span> · Self-hosted crypto payment infrastructure</div>
+    <div>© 2026 PayRam. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const slider = document.getElementById('volume');
+  const volDisplay = document.getElementById('volDisplay');
+  const cardFee = document.getElementById('cardFee');
+  const payramFee = document.getElementById('payramFee');
+  const savings = document.getElementById('savings');
+  const fmt = n => '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+
+  function update() {
+    const v = parseInt(slider.value, 10);
+    volDisplay.textContent = fmt(v);
+    const card = v * 0.029;
+    const pr = v * 0.003;
+    cardFee.textContent = fmt(card);
+    payramFee.textContent = fmt(pr);
+    savings.textContent = fmt(card - pr) + ' more';
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+
+
+
+</body></html>

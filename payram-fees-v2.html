@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayRam | Keep 99.7% of Every Sale</title>
+<meta name="description" content="For a limited period, PayRam takes just 0.3%. You keep 99.7% of every sale, settle instantly in stablecoins, and run payments on infrastructure no one can take away.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./payram-fees-v2_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --lime: #CAFF54;
+    --cta: #01E46F;
+    --magenta: #FF00FF;
+    --navy: #0D0D1A;
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey: rgba(255,255,255,0.65);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 96px 0; }
+  .section-dark { background: var(--black); }
+  .section-navy { background: var(--navy); }
+  .section-lime { background: var(--lime); color: var(--black); }
+  .section-magenta { background: var(--magenta); color: var(--black); }
+
+  h1, h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-size: clamp(42px, 6.5vw, 84px); }
+  h2 { font-size: clamp(30px, 4.5vw, 52px); margin-bottom: 20px; }
+  .highlight { color: var(--lime); }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 18px;
+  }
+  .section-lime .eyebrow { color: var(--black); }
+
+  .sub { font-size: 18px; color: var(--grey); max-width: 660px; }
+  .section-lime .sub, .section-magenta .sub { color: rgba(0,0,0,0.75); }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px; max-width: 1140px; margin: 0 auto;
+  }
+  .logo { font-weight: 800; font-size: 20px; }
+  .logo span { color: var(--lime); }
+
+  .btn {
+    display: inline-block; font-weight: 700; text-decoration: none;
+    border-radius: 8px; padding: 14px 30px; font-size: 16px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+  .btn-primary { background: var(--cta); color: var(--black); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(1,228,111,0.35); }
+  .btn-ghost { border: 2px solid rgba(255,255,255,0.25); color: var(--white); }
+  .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+  .btn-sm { padding: 10px 22px; font-size: 14px; }
+  .btn-dark { background: var(--black); color: var(--lime); }
+  .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
+
+  /* Scrolling ticker */
+  .ticker {
+    background: var(--lime);
+    color: var(--black);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .ticker-track { display: inline-block; animation: scroll 22s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker span { margin: 0 28px; }
+
+  /* Hero */
+  .hero { padding: 100px 0 90px; text-align: center; }
+  .keep-number {
+    font-size: clamp(90px, 16vw, 220px);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--lime);
+    letter-spacing: -0.04em;
+    display: block;
+  }
+  .hero h1 { margin-top: 8px; }
+  .hero .sub { margin: 28px auto 38px; }
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .hero-meta { margin-top: 30px; font-size: 14px; color: var(--grey); }
+
+  /* The receipt */
+  .receipt {
+    max-width: 520px;
+    margin: 52px auto 0;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 14px;
+    padding: 40px 38px;
+    font-size: 16px;
+    box-shadow: 0 24px 60px rgba(202,255,84,0.12);
+  }
+  .receipt h3 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-bottom: 18px;
+    border-bottom: 2px dashed rgba(0,0,0,0.2);
+    margin-bottom: 18px;
+  }
+  .receipt .row {
+    display: flex; justify-content: space-between;
+    padding: 8px 0; font-weight: 500;
+  }
+  .receipt .row.deduct span:last-child { color: #C0392B; }
+  .receipt .row.total {
+    border-top: 2px dashed rgba(0,0,0,0.2);
+    margin-top: 14px; padding-top: 16px;
+    font-weight: 900; font-size: 19px; text-transform: uppercase;
+  }
+  .receipt .stamp {
+    margin-top: 22px; text-align: center;
+    font-weight: 800; font-size: 13px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--black);
+    background: var(--lime);
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .receipt.old { opacity: 0.92; }
+  .receipt.old .stamp { background: #F1E3E3; color: #C0392B; }
+
+  .receipt-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    max-width: 1080px; margin: 52px auto 0;
+  }
+  .receipt-grid .receipt { margin: 0; max-width: none; }
+
+  /* Story section */
+  .story p {
+    font-size: clamp(19px, 2.2vw, 24px);
+    font-weight: 500;
+    line-height: 1.65;
+    max-width: 780px;
+    margin-bottom: 26px;
+    color: rgba(255,255,255,0.88);
+  }
+  .story p strong { color: var(--lime); font-weight: 700; }
+  .story .kicker {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-top: 12px;
+  }
+
+  /* Magenta stat bar */
+  .stat-bar { padding: 64px 0; }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+  .stat-grid .num { font-size: clamp(34px, 4vw, 56px); font-weight: 900; line-height: 1; }
+  .stat-grid .label {
+    font-size: 13px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; margin-top: 10px; color: rgba(0,0,0,0.7);
+  }
+
+  /* Personas */
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 52px; }
+  .persona {
+    background: rgba(0,0,0,0.06);
+    border: 2px solid var(--black);
+    border-radius: 16px;
+    padding: 34px 30px;
+  }
+  .persona .tag {
+    display: inline-block;
+    background: var(--black); color: var(--lime);
+    font-size: 12px; font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .persona h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+  .persona p { font-size: 15px; color: rgba(0,0,0,0.75); }
+  .persona .save { margin-top: 18px; font-weight: 900; font-size: 17px; }
+
+  /* Ownership pillars */
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 52px; }
+  .pillar {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 36px 32px;
+    transition: border-color 0.2s ease;
+  }
+  .pillar:hover { border-color: var(--lime); }
+  .pillar h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; text-transform: uppercase; }
+  .pillar h3 span { color: var(--lime); }
+  .pillar p { font-size: 15px; color: var(--grey); }
+
+  /* Final CTA */
+  .final-cta { text-align: center; }
+  .final-cta .sub { margin: 0 auto 36px; }
+  .deadline-note {
+    display: inline-block;
+    border: 2px dashed var(--black);
+    border-radius: 999px;
+    padding: 8px 22px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 36px 0; font-size: 14px; color: var(--grey);
+  }
+  .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+  @media (max-width: 860px) {
+    section { padding: 70px 0; }
+    .receipt-grid, .pillars, .persona-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Pay<span>Ram</span></div>
+    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#get-started" class="btn btn-primary btn-sm">Keep 99.7%</a>
+  </div>
+</nav>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>0.3% fees for a limited period</span><span>•</span>
+    <span>You keep 99.7% of every sale</span><span>•</span>
+    <span>No chargebacks</span><span>•</span>
+    <span>No rolling reserves</span><span>•</span>
+    <span>Self-hosted, always</span><span>•</span>
+    <span>0.3% fees for a limited period</span><span>•</span>
+    <span>You keep 99.7% of every sale</span><span>•</span>
+    <span>No chargebacks</span><span>•</span>
+    <span>No rolling reserves</span><span>•</span>
+    <span>Self-hosted, always</span><span>•</span>
+  </div>
+</div>
+
+<!-- HERO: the keep-rate flip -->
+<header class="hero section-dark">
+  <div class="container">
+    <span class="eyebrow">Limited Period · Reduced Fees</span>
+    <span class="keep-number">99.7%</span>
+    <h1>Is now <span class="highlight">yours</span></h1>
+    <p class="sub">Everyone talks about what they charge. We would rather talk about what you keep. For a limited period, PayRam takes just 0.3% per transaction. The other 99.7% lands in your wallet, instantly, with no one in between.</p>
+    <div class="hero-ctas">
+      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#get-started" class="btn btn-primary">Start Keeping 99.7%</a>
+      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#receipts" class="btn btn-ghost">Compare the receipts</a>
+    </div>
+    <p class="hero-meta">No setup fees. No monthly minimums. No fine print hiding in the footer.</p>
+  </div>
+</header>
+
+<!-- THE TWO RECEIPTS -->
+<section class="section-navy" id="receipts">
+  <div class="container">
+    <span class="eyebrow">A Tale of Two Receipts</span>
+    <h2>The same $10,000 sale, <span class="highlight">two endings</span></h2>
+    <p class="sub">Follow one payment through the old rails and through PayRam. The difference is not just the fee line. It is every line.</p>
+    <div class="receipt-grid">
+      <div class="receipt old">
+        <h3>Card Processor Statement</h3>
+        <div class="row"><span>Gross sale</span><span>$10,000.00</span></div>
+        <div class="row deduct"><span>Processing fee 2.9%</span><span>-$290.00</span></div>
+        <div class="row deduct"><span>Per-transaction fees</span><span>-$30.00</span></div>
+        <div class="row deduct"><span>Rolling reserve 10%, held 180 days</span><span>-$1,000.00</span></div>
+        <div class="row deduct"><span>Chargeback provisions</span><span>-$120.00</span></div>
+        <div class="row total"><span>Available now</span><span>$8,560.00</span></div>
+        <span class="stamp">Payout in 2 to 7 business days</span>
+      </div>
+      <div class="receipt">
+        <h3>PayRam Statement</h3>
+        <div class="row"><span>Gross sale</span><span>$10,000.00</span></div>
+        <div class="row deduct"><span>PayRam fee 0.3%</span><span>-$30.00</span></div>
+        <div class="row"><span>Rolling reserve</span><span>$0.00</span></div>
+        <div class="row"><span>Chargeback provisions</span><span>$0.00</span></div>
+        <div class="row"><span>&nbsp;</span><span>&nbsp;</span></div>
+        <div class="row total"><span>In your wallet</span><span>$9,970.00</span></div>
+        <span class="stamp">Settled instantly, on-chain</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY: the hidden tax -->
+<section class="section-dark story">
+  <div class="container">
+    <span class="eyebrow">The Hidden Tax</span>
+    <p>Payment fees never feel like much. A few percent here, a dispute fee there, a reserve you will get back eventually. So most businesses stop looking.</p>
+    <p>But add it up over a year and the picture changes. A merchant doing $100k a month hands over <strong>$35,000 or more annually</strong> to processors. That is a salary. That is a marketing budget. That is runway.</p>
+    <p>And the money is only half of it. The same processors that take the fee can also freeze your account, hold your reserve, and decide your industry is no longer welcome. <strong>You pay them for the privilege of being at their mercy.</strong></p>
+    <p class="kicker">For a limited period, the tax drops to <span class="highlight">0.3%.</span><br>The mercy part goes away forever.</p>
+  </div>
+</section>
+
+<!-- MAGENTA STAT BAR -->
+<section class="section-magenta stat-bar">
+  <div class="container">
+    <div class="stat-grid">
+      <div><div class="num">99.7%</div><div class="label">Of Every Sale Is Yours</div></div>
+      <div><div class="num">$0</div><div class="label">Held In Reserves</div></div>
+      <div><div class="num">$0</div><div class="label">Lost To Chargebacks</div></div>
+      <div><div class="num">∞</div><div class="label">Days Until Deplatformed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS: what 0.3% means for you -->
+<section class="section-lime">
+  <div class="container">
+    <span class="eyebrow">Three Businesses, One Rate</span>
+    <h2>What you keep, by the numbers</h2>
+    <p class="sub">The campaign rate is the same for everyone. What it unlocks depends on what you run.</p>
+    <div class="persona-grid">
+      <div class="persona">
+        <span class="tag">iGaming Operator</span>
+        <h3>$500k monthly volume</h3>
+        <p>High dispute rates and constant acquirer churn make card rails a liability. At 0.3% with zero chargebacks, payments stop being a risk department.</p>
+        <div class="save">Keeps $13,000+ more per month</div>
+      </div>
+      <div class="persona">
+        <span class="tag">SaaS Founder</span>
+        <h3>$80k monthly volume</h3>
+        <p>Global customers, recurring billing, and cross-border fees eating margin. Stablecoin settlement removes FX spread and payout delays in one move.</p>
+        <div class="save">Keeps $2,000+ more per month</div>
+      </div>
+      <div class="persona">
+        <span class="tag">E-commerce Brand</span>
+        <h3>$200k monthly volume</h3>
+        <p>Thin margins where every basis point matters. The fee cut alone is the difference between a flat quarter and a profitable one.</p>
+        <div class="save">Keeps $5,200+ more per month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OWNERSHIP PILLARS -->
+<section class="section-navy">
+  <div class="container">
+    <span class="eyebrow">Why It Stays Cheap</span>
+    <h2>0.3% is the offer.<br><span class="highlight">Ownership</span> is the product.</h2>
+    <p class="sub">PayRam can run this low because there is no middleman stack to feed. You host the infrastructure. You hold the keys. The fee covers software, not gatekeepers.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3><span>Your</span> server</h3>
+        <p>PayRam deploys on infrastructure you control. There is no custodian, no acquirer, and no platform that can suspend your business overnight.</p>
+      </div>
+      <div class="pillar">
+        <h3><span>Your</span> wallet</h3>
+        <p>Funds settle directly to addresses you own the moment a payment confirms. Stablecoin settlement keeps volatility off your balance sheet.</p>
+      </div>
+      <div class="pillar">
+        <h3><span>Your</span> customers</h3>
+        <p>Accept BTC, ETH, USDT, USDC and more from any country. No regional blocks, no cross-border surcharges, no bank deciding who can pay you.</p>
+      </div>
+      <div class="pillar">
+        <h3><span>Your</span> terms</h3>
+        <p>Crypto payments are final, so chargebacks and friendly fraud disappear. Integrate via payment links, hosted checkout, or API and go live in hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-lime final-cta" id="get-started">
+  <div class="container">
+    <span class="deadline-note">Campaign rate · Limited period only</span>
+    <h2>The rate expires.<br>The ownership doesn't.</h2>
+    <p class="sub">Sign up during the campaign and every transaction is billed at 0.3%. When the promotion ends, you still own your payment stack. That part has no deadline.</p>
+    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#" class="btn btn-dark">Claim the 0.3% Rate</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>Pay<span style="color:var(--lime)">Ram</span> · Self-hosted crypto payment infrastructure</div>
+    <div>© 2026 PayRam. All rights reserved.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
