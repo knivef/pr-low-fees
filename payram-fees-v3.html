@@ -7,7 +7,7 @@
 <meta name="description" content="Compare PayRam&#39;s limited-time 0.3% rate against Stripe, PayPal, BitPay and other crypto processors. Lower fees, no chargebacks, no custody risk, instant settlement.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./payram-fees-v3_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --lime: #CAFF54;
@@ -254,16 +254,44 @@
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
     .sticky-cta { display: block; }
   }
+
+  .version-bar {
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 24px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .v-link {
+    color: var(--grey);
+    text-decoration: none;
+    padding: 4px 14px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+  }
+  .v-link:hover { color: var(--lime); }
+  .v-link.active { background: var(--lime); color: var(--black); }
 </style>
 </head>
 <body>
+
+<div class="version-bar">
+  <a href="payram-fees-v1.html" class="v-link">V1 — Fee Cut</a>
+  <a href="payram-fees-v2.html" class="v-link">V2 — Keep 99.7%</a>
+  <a href="payram-fees-v3.html" class="v-link active">V3 — Comparison</a>
+</div>
 
 <div class="urgency">⚡ Limited period: PayRam fees reduced to 0.3% on all transactions</div>
 
 <nav>
   <div class="nav-inner">
     <div class="logo">Pay<span>Ram</span></div>
-    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#get-started" class="btn btn-primary btn-sm">Get 0.3% Now</a>
+    <a href="#get-started" class="btn btn-primary btn-sm">Get 0.3% Now</a>
   </div>
 </nav>
 
@@ -274,8 +302,8 @@
     <h1>Every processor,<br>side by side.<br><span class="highlight">One is 0.3%.</span></h1>
     <p class="sub">Card processors charge ten times more and can freeze your account. Crypto processors custody your funds. PayRam is self-hosted, settles instantly, and for a limited period costs just 0.3% per transaction.</p>
     <div class="hero-ctas">
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#get-started" class="btn btn-primary">Claim the 0.3% Rate</a>
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#comparison" class="btn btn-ghost">See Full Comparison</a>
+      <a href="#get-started" class="btn btn-primary">Claim the 0.3% Rate</a>
+      <a href="#comparison" class="btn btn-ghost">See Full Comparison</a>
     </div>
     <div class="trust-row">
       <span>No setup fees</span>
@@ -374,7 +402,7 @@
     </div>
     <p class="table-note">Competitor rates are based on publicly listed standard pricing and typical high-risk terms. Verify current pricing on each provider's site.</p>
     <div class="table-cta">
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#get-started" class="btn btn-primary">Switch to 0.3% Today</a>
+      <a href="#get-started" class="btn btn-primary">Switch to 0.3% Today</a>
     </div>
   </div>
 </section>
@@ -423,7 +451,7 @@
       </div>
       <div class="calc-headline">You keep <span id="saveAmount">$3,120</span> more per year vs Stripe</div>
       <div class="calc-cta">
-        <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#get-started" class="btn btn-dark">Keep That Money</a>
+        <a href="#get-started" class="btn btn-dark">Keep That Money</a>
       </div>
     </div>
   </div>
@@ -495,12 +523,12 @@
     <span class="eyebrow">Limited Period Offer</span>
     <h2>The comparison ends<br>the same way every time</h2>
     <p class="sub">Lowest fee on the table. The only option where you hold the funds. The only one that cannot freeze you. Lock in 0.3% while the campaign runs.</p>
-    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#" class="btn btn-dark">Claim Your 0.3% Rate</a>
+    <a href="#" class="btn btn-dark">Claim Your 0.3% Rate</a>
     <p class="risk-reversal">No contracts. No lock-in. Run it alongside your current processor.</p>
   </div>
 </section>
 
-<a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v3-comparison.html#get-started" class="sticky-cta">Claim the 0.3% Rate →</a>
+<a href="#get-started" class="sticky-cta">Claim the 0.3% Rate →</a>
 
 <footer>
   <div class="container footer-inner">

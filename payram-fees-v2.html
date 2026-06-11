@@ -7,7 +7,7 @@
 <meta name="description" content="For a limited period, PayRam takes just 0.3%. You keep 99.7% of every sale, settle instantly in stablecoins, and run payments on infrastructure no one can take away.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./payram-fees-v2_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --lime: #CAFF54;
@@ -260,14 +260,42 @@
     .receipt-grid, .pillars, .persona-grid { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
   }
+
+  .version-bar {
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 24px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .v-link {
+    color: var(--grey);
+    text-decoration: none;
+    padding: 4px 14px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+  }
+  .v-link:hover { color: var(--lime); }
+  .v-link.active { background: var(--lime); color: var(--black); }
 </style>
 </head>
 <body>
 
+<div class="version-bar">
+  <a href="payram-fees-v1.html" class="v-link">V1 — Fee Cut</a>
+  <a href="payram-fees-v2.html" class="v-link active">V2 — Keep 99.7%</a>
+  <a href="payram-fees-v3.html" class="v-link">V3 — Comparison</a>
+</div>
+
 <nav>
   <div class="nav-inner">
     <div class="logo">Pay<span>Ram</span></div>
-    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#get-started" class="btn btn-primary btn-sm">Keep 99.7%</a>
+    <a href="#get-started" class="btn btn-primary btn-sm">Keep 99.7%</a>
   </div>
 </nav>
 
@@ -294,8 +322,8 @@
     <h1>Is now <span class="highlight">yours</span></h1>
     <p class="sub">Everyone talks about what they charge. We would rather talk about what you keep. For a limited period, PayRam takes just 0.3% per transaction. The other 99.7% lands in your wallet, instantly, with no one in between.</p>
     <div class="hero-ctas">
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#get-started" class="btn btn-primary">Start Keeping 99.7%</a>
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#receipts" class="btn btn-ghost">Compare the receipts</a>
+      <a href="#get-started" class="btn btn-primary">Start Keeping 99.7%</a>
+      <a href="#receipts" class="btn btn-ghost">Compare the receipts</a>
     </div>
     <p class="hero-meta">No setup fees. No monthly minimums. No fine print hiding in the footer.</p>
   </div>
@@ -417,7 +445,7 @@
     <span class="deadline-note">Campaign rate · Limited period only</span>
     <h2>The rate expires.<br>The ownership doesn't.</h2>
     <p class="sub">Sign up during the campaign and every transaction is billed at 0.3%. When the promotion ends, you still own your payment stack. That part has no deadline.</p>
-    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing-v2.html#" class="btn btn-dark">Claim the 0.3% Rate</a>
+    <a href="#" class="btn btn-dark">Claim the 0.3% Rate</a>
   </div>
 </section>
 

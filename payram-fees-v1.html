@@ -7,7 +7,7 @@
 <meta name="description" content="Accept crypto payments at 0.3% for a limited period. No chargebacks, no rolling reserves, no debanking risk. Settle in stablecoins on infrastructure you control.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./payram-fees-v1_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --lime: #CAFF54;
@@ -357,14 +357,42 @@
     .benefit-grid, .steps { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
   }
+
+  .version-bar {
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 24px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .v-link {
+    color: var(--grey);
+    text-decoration: none;
+    padding: 4px 14px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+  }
+  .v-link:hover { color: var(--lime); }
+  .v-link.active { background: var(--lime); color: var(--black); }
 </style>
 </head>
 <body>
 
+<div class="version-bar">
+  <a href="payram-fees-v1.html" class="v-link active">V1 — Fee Cut</a>
+  <a href="payram-fees-v2.html" class="v-link">V2 — Keep 99.7%</a>
+  <a href="payram-fees-v3.html" class="v-link">V3 — Comparison</a>
+</div>
+
 <nav>
   <div class="nav-inner">
     <div class="logo">Pay<span>Ram</span></div>
-    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#get-started" class="btn btn-primary btn-sm">Claim 0.3% Rate</a>
+    <a href="#get-started" class="btn btn-primary btn-sm">Claim 0.3% Rate</a>
   </div>
 </nav>
 
@@ -375,8 +403,8 @@
     <h1>Pay <span class="fee-strike">1%</span> <span class="highlight">0.3%</span><br>on every payment</h1>
     <p class="sub">For a limited period, PayRam fees drop to 0.3% per transaction. Accept crypto payments on infrastructure you control, keep more of every sale, and never worry about chargebacks or frozen funds.</p>
     <div class="hero-ctas">
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#get-started" class="btn btn-primary">Start at 0.3%</a>
-      <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#compare" class="btn btn-ghost">See the math</a>
+      <a href="#get-started" class="btn btn-primary">Start at 0.3%</a>
+      <a href="#compare" class="btn btn-ghost">See the math</a>
     </div>
     <p class="hero-meta">No setup fees. No monthly minimums. Rate applies to all transactions during the campaign period.</p>
   </div>
@@ -550,7 +578,7 @@
     <span class="eyebrow">Limited Period</span>
     <h2>Lock in 0.3% before it's gone</h2>
     <p class="sub">Ten times cheaper than card rails. Zero chargebacks. Infrastructure you own. The only thing with a deadline is the rate.</p>
-    <a href="file:///Users/kvn/Downloads/payram-03-fee-landing.html#" class="btn btn-dark">Claim Your 0.3% Rate</a>
+    <a href="#" class="btn btn-dark">Claim Your 0.3% Rate</a>
   </div>
 </section>
 
